@@ -2,7 +2,7 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FROM kineticskunk/nodebase
+FROM kineticskunk/base
 LABEL authors=SeleniumHQ
 
 USER root
@@ -29,10 +29,16 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 #=================================
 # Chrome Launch Script Wrapper
 #=================================
-COPY wrap_chrome_binary /opt/bin/wrap_chrome_binary
-RUN /opt/bin/wrap_chrome_binary
+# COPY wrap_chrome_binary /opt/bin/wrap_chrome_binary
+# RUN /opt/bin/wrap_chrome_binary
 
 USER seluser
+
+#=================================
+# Chrome Launch Script Wrapper
+#=================================
+COPY wrap_chrome_binary /opt/bin/wrap_chrome_binary
+RUN /opt/bin/wrap_chrome_binary
 
 #============================================
 # Chrome webdriver
