@@ -1,5 +1,5 @@
 NAME := kineticskunk
-VERSION := $(or $(VERSION),$(VERSION),3.11.0-toolium)
+VERSION := $(or $(VERSION),$(VERSION),3.11.1-toolium)
 NAMESPACE := $(or $(NAMESPACE),$(NAMESPACE),$(NAME))
 AUTHORS := $(or $(AUTHORS),$(AUTHORS),SeleniumHQ KineticSkunkHQ)
 PLATFORM := $(shell uname -s)
